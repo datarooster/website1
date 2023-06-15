@@ -25,7 +25,7 @@ image: /assets/img/og-image.jpg
           </span>
           </h1>
 
-          <h1 class="mt-5 text-green">You can be...</h1>
+          <h1 class="mt-5 text-green">Now you can be.</h1>
           <div class="main-image mb-4">
           {% picture img/sleeptight.png %}
           </div>
