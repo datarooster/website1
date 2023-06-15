@@ -1,12 +1,12 @@
-title: Dovetail from PRX
-url: "https://dovetail.prx.org" # the base hostname & protocol for your site
+title: Datarooster.ai
+url: "https://datarooster.ai" # the base hostname & protocol for your site
 
 author:
   name: PRX
   email: dovetail@prx.org
 
 description: > # this means to ignore newlines until "show_excerpts:"
-  Podcast distribution & Privacy forward ad tech platform
+  Trust your Data products and services
 
 # Minima date format
 # refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
