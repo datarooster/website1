@@ -1,0 +1,16 @@
+.btn {
+  border: 2px solid transparent;
+  font-weight: bold;
+  border-radius: $btn-border-radius;
+}
+
+.btn-primary {
+  background: $red;
+  color: $white;
+
+  &:hover {
+    background: $white;
+    color: $orange;
+    border-color: $red;
+  }
+}

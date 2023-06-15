@@ -1,0 +1,62 @@
+---
+layout: default
+---
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header bg-darkblue text-white lede hero px-4 pb-4 m-0">
+    {%- if page.heroimage -%}
+    <div class="hero-image post">
+      <div>{% picture {{ page.heroimage | escape }} --alt {{ page.heroimagealt }}} %}</div>
+    </div>
+    {%- endif -%}
+
+    <div class="hero-content container col-xxl-6">
+      <div class="hero-content-inner">
+        <h1 class="display-5 post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+        {%- if page.excerpt -%}
+        <p class="lead fs-3">{{ page.excerpt }}</p>
+        {%- endif -%}
+        <p class="post-meta fs-6">
+          {%- if page.author -%}
+          {% for author in page.author %}
+              <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <span class="p-author h-card" itemprop="name">{{ author }}</span></span>
+                {%- if forloop.last == false %}, {% endif -%}
+            {% endfor %}
+            • {%- endif -%}
+          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+          <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+            {{ page.date | date: date_format }}
+          </time>
+          {%- if page.modified_date -%}
+            ~
+            {%- assign mdate = page.modified_date | date_to_xmlschema -%}
+            <time class="dt-modified" datetime="{{ mdate }}" itemprop="dateModified">
+              {{ mdate | date: date_format }}
+            </time>
+          {%- endif -%}
+          </p>
+      </div>
+    </div>
+  </header>
+
+  <div class="post-content e-content bg-white" itemprop="articleBody">
+    <div class="container col-xxl-6 p-4">
+      {{ content }}
+    </div>
+  </div>
+
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</article>
+
+<aside class="text-white hero cta px-4 m-0">
+  <div class="hero-image">
+    <div>{% picture img/cta-hero.jpg --alt Open laptop with a podcasting microphone in foreground %}</div>
+  </div>
+  <div class="hero-content container col-xxl-6 text-center">
+    <div class="hero-content-inner">
+      <h2 class=" fw-bold">Interested in a demo?</h2>
+      <p class="fs-3 mt-2 mb-4">Reach out today</p>
+      <p class="text-center"><a href="{% link pages/contact.md %}" type="button" class="btn btn-primary px-4 gap-3">Let's Talk</a></p>
+    </div>
+  </div>
+</aside>
